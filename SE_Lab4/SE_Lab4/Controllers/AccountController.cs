@@ -70,6 +70,7 @@ namespace SE_Lab4.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Dashboard.GetInstance().id =  User.Identity;
                 return View(model);
             }
 

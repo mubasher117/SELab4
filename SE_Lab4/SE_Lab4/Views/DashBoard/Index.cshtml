@@ -1,0 +1,72 @@
+﻿@model SE_Lab4.Models.Dashboard
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<label>@Model.id</label>
+
+<label>@Model.AddedPersons</label>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email Id
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Birthday_People)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PersonId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PersonId })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div >
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email Id
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Birthday_People)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PersonId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PersonId })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
