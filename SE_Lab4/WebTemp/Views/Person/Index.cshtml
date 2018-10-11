@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebTemp.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.MiddleName) @Html.DisplayFor(modelItem => item.LastName)
+            
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PersonId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonId })
+        </td>
+        <td>
+            @Html.ActionLink("Add Contacts", "AddContacts", new { id = item.PersonId }) |
+            @Html.ActionLink("View Contacts", "ViewContacts", new { id = item.PersonId })
+        </td>
+    </tr>
+}
+
+</table>

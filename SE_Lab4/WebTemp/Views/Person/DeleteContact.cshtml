@@ -1,0 +1,38 @@
+﻿@model WebTemp.Contact
+
+@{
+    ViewBag.Title = "DeleteContact";
+}
+
+<h2>DeleteContact</h2>
+
+<h3>This Contact has been deleted</h3>
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to List", "ViewContacts",new { id=Model.PersonId})
+        </div>
+    }
+</div>
