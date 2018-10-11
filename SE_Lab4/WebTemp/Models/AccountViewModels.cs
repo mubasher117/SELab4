@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebTemp.Models
 {
+    //Account
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
